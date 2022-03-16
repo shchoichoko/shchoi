@@ -34,7 +34,7 @@ int main()
 		 PARK_CHILD_DAY_PRICE = 46000, PARK_CHILD_NIGHT_PRICE = 35000;
 		 		 
 	const float DISABLE_DISCOUNT_RATE = 0.6, MERIT_DISCOUNT_RATE = 0.5,
-			MULTICHILD_DISCOUNT_RATE = 0.8,	PREGNANT_DISCOUNT_RATE = 0.85;
+			MULTI_CHILD_DISCOUNT_RATE = 0.8,	PREGNANT_DISCOUNT_RATE = 0.85;
 	
 	
 	
@@ -139,21 +139,36 @@ int main()
 						}
 						else if(special==2)
 						{
-							result = price * DISABLE_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;	
+							}
+							else{	result = price * DISABLE_DISCOUNT_RATE;	}
 						}
 						else if(special==3)
 						{
-							result = price * MERIT_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;
+							}
+							else{	result = price * MERIT_DISCOUNT_RATE;	}
 						}
 						else if(special==4)
 						{
-							result = price * MULTICHILD_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;
+							}
+							else{	result = price * MULTI_CHILD_DISCOUNT_RATE;	}
 						}
 						else if(special==5)
 						{
-							result = price *PREGNANT_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;
+							}
+							else{	result = price * PREGNANT_DISCOUNT_RATE;	}
 						}
-						
 						totalPrice = result * howMany;
 						printf("가격은 %d원입니다.\n",totalPrice);	
 						restart2=1;
@@ -231,19 +246,35 @@ int main()
 						}
 						else if(special==2)
 						{
-							result = price * DISABLE_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;	
+							}
+							else{	result = price * DISABLE_DISCOUNT_RATE;	}
 						}
 						else if(special==3)
 						{
-							result = price * MERIT_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;
+							}
+							else{	result = price * MERIT_DISCOUNT_RATE;	}
 						}
 						else if(special==4)
 						{
-							result = price * MULTICHILD_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;
+							}
+							else{	result = price * MULTI_CHILD_DISCOUNT_RATE;	}
 						}
 						else if(special==5)
 						{
-							result = price *PREGNANT_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;
+							}
+							else{	result = price * PREGNANT_DISCOUNT_RATE;	}
 						}
 						totalPrice = result * howMany;
 						printf("가격은 %d원입니다.\n",totalPrice);						
@@ -331,15 +362,15 @@ int main()
 						}
 						// 나이에 따라 가격 정하기 
 						if(realage<=MAX_ADULT&&realage>=MIN_ADULT)		//성인 
-						{price = MULTI_ADULT_DAY_PRICE;}
+						{price = PARK_ADULT_DAY_PRICE;}
 						else if(realage>MAX_ADULT)						//노인  
-						{price = MULTI_CHILD_DAY_PRICE;}
+						{price = PARK_CHILD_DAY_PRICE;}
 						else if(realage>=MIN_TEEN&&realage<=MAX_TEEN)	//십대 
-						{price = MULTI_TEEN_DAY_PRICE;}
+						{price = PARK_TEEN_DAY_PRICE;}
 						else if(realage>=MIN_CHILD&&realage<=MAX_CHILD)	//어린이
-						{price = MULTI_CHILD_DAY_PRICE;} 
+						{price = PARK_CHILD_DAY_PRICE;} 
 						else if(realage>=MIN_BABY&&realage<MIN_CHILD)	//영유아
-						{price = MULTI_REAL_BABY_PRICE;} 
+						{price = PARK_REAL_BABY_PRICE;} 
 												
 						printf("몇 개를 주문하시겠습니까?(최대 10개)\n");
 						scanf("%d",&howMany);	
@@ -356,19 +387,35 @@ int main()
 						}
 						else if(special==2)
 						{
-							result = price * DISABLE_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;	
+							}
+							else{	result = price * DISABLE_DISCOUNT_RATE;	}
 						}
 						else if(special==3)
 						{
-							result = price * MERIT_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;
+							}
+							else{	result = price * MERIT_DISCOUNT_RATE;	}
 						}
 						else if(special==4)
 						{
-							result = price * MULTICHILD_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;
+							}
+							else{	result = price * MULTI_CHILD_DISCOUNT_RATE;	}
 						}
 						else if(special==5)
 						{
-							result = price *PREGNANT_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;
+							}
+							else{	result = price * PREGNANT_DISCOUNT_RATE;	}
 						}
 						totalPrice = result * howMany;
 						printf("가격은 %d원입니다.\n",totalPrice);	
@@ -424,15 +471,15 @@ int main()
 						}
 						// 나이에 따라 가격 정하기 
 						if(realage<=MAX_ADULT&&realage>=MIN_ADULT)		//성인 
-						{price = MULTI_ADULT_NIGHT_PRICE;}
+						{price = PARK_ADULT_NIGHT_PRICE;}
 						else if(realage>MAX_ADULT)						//노인  
-						{price = MULTI_CHILD_NIGHT_PRICE;}
+						{price = PARK_CHILD_NIGHT_PRICE;}
 						else if(realage>=MIN_TEEN&&realage<=MAX_TEEN)	//십대 
-						{price = MULTI_TEEN_NIGHT_PRICE;}
+						{price = PARK_TEEN_NIGHT_PRICE;}
 						else if(realage>=MIN_CHILD&&realage<=MAX_CHILD)	//어린이
-						{price = MULTI_CHILD_NIGHT_PRICE;} 
+						{price = PARK_CHILD_NIGHT_PRICE;} 
 						else if(realage>=MIN_BABY&&realage<MIN_CHILD)	//영유아
-						{price = MULTI_REAL_BABY_PRICE;}  				
+						{price = PARK_REAL_BABY_PRICE;}  				
 						printf("몇 개를 주문하시겠습니까?(최대 10개)\n");
 						scanf("%d",&howMany);	
 						printf("우대사항을 선택하세요.\n");
@@ -448,19 +495,35 @@ int main()
 						}
 						else if(special==2)
 						{
-							result = price * DISABLE_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;	
+							}
+							else{	result = price * DISABLE_DISCOUNT_RATE;	}
 						}
 						else if(special==3)
 						{
-							result = price * MERIT_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;
+							}
+							else{	result = price * MERIT_DISCOUNT_RATE;	}
 						}
 						else if(special==4)
 						{
-							result = price * MULTICHILD_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;
+							}
+							else{	result = price * MULTI_CHILD_DISCOUNT_RATE;	}
 						}
 						else if(special==5)
 						{
-							result = price *PREGNANT_DISCOUNT_RATE;
+							if(realage>MAX_ADULT)
+							{	
+								result = price * 1;
+							}
+							else{	result = price * PREGNANT_DISCOUNT_RATE;	}
 						}
 						totalPrice = result * howMany;
 						printf("가격은 %d원입니다.\n",totalPrice);						
