@@ -19,6 +19,7 @@ int main()
 	float price;	//기본 가격 
 	float result;	//할인 계산결과 
 	int totalPrice;	//최종 가격 
+	int keepgo;
 	
 	const int MIN_BABY = 1, MIN_CHILD = 3, MIN_TEEN = 13, MIN_ADULT = 19,
 		 MAX_CHILD = 12, MAX_TEEN = 18, MAX_ADULT = 64;
@@ -171,6 +172,19 @@ int main()
 						}
 						totalPrice = result * howMany;
 						printf("가격은 %d원입니다.\n",totalPrice);	
+						printf("감사합니다!\n");
+						printf("계속 발권하시겠습니까?\n");
+						printf("1.티켓  발권\n");
+						printf("2.종 료\n");
+						scanf("%d",&keepgo);
+						if(keepgo==1)
+						{
+							restart=0;
+						} 
+						else if(keepgo==2)
+						{
+							restart=1;
+						}
 						restart2=1;
 						break;
 					}
@@ -277,7 +291,8 @@ int main()
 							else{	result = price * PREGNANT_DISCOUNT_RATE;	}
 						}
 						totalPrice = result * howMany;
-						printf("가격은 %d원입니다.\n",totalPrice);						
+						printf("가격은 %d원입니다.\n",totalPrice);		
+						printf("감사합니다!\n");				
 						restart2=1;
 						break;
 					}
@@ -419,6 +434,7 @@ int main()
 						}
 						totalPrice = result * howMany;
 						printf("가격은 %d원입니다.\n",totalPrice);	
+						printf("감사합니다!\n");
 						restart2=1;
 						break;
 					}
@@ -526,7 +542,8 @@ int main()
 							else{	result = price * PREGNANT_DISCOUNT_RATE;	}
 						}
 						totalPrice = result * howMany;
-						printf("가격은 %d원입니다.\n",totalPrice);						
+						printf("가격은 %d원입니다.\n",totalPrice);		
+						printf("감사합니다!\n");				
 						restart2=1;
 						break;
 					}
