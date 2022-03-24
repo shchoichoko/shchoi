@@ -20,6 +20,7 @@ int main()
 	float result;	//할인 계산결과 
 	int totalPrice;	//최종 가격 
 	int keepgo;
+	int reorder;	//주문 갯수 1~10장까지만 입력 가능. 
 	
 	const int MIN_BABY = 1, MIN_CHILD = 3, MIN_TEEN = 13, MIN_ADULT = 19,
 		 MAX_CHILD = 12, MAX_TEEN = 18, MAX_ADULT = 64;
@@ -124,9 +125,8 @@ int main()
 						{price = MULTI_CHILD_DAY_PRICE;} 
 						else if(realage>=MIN_BABY&&realage<MIN_CHILD)	//영유아
 						{price = MULTI_REAL_BABY_PRICE;} 
-												
 						printf("몇 개를 주문하시겠습니까?(최대 10개)\n");
-						scanf("%d",&howMany);	
+						scanf("%d",&howMany);
 						printf("우대사항을 선택하세요.\n");
 						printf("1.없음(나이 우대는 자동처리됩니다.)\n");
 						printf("2.장애인\n");
@@ -246,7 +246,7 @@ int main()
 						else if(realage>=MIN_BABY&&realage<MIN_CHILD)	//영유아
 						{price = MULTI_REAL_BABY_PRICE;}  				
 						printf("몇 개를 주문하시겠습니까?(최대 10개)\n");
-						scanf("%d",&howMany);	
+						scanf("%d",&howMany);
 						printf("우대사항을 선택하세요.\n");
 						printf("1.없음(나이 우대는 자동처리됩니다.)\n");
 						printf("2.장애인\n");
@@ -386,9 +386,9 @@ int main()
 						{price = PARK_CHILD_DAY_PRICE;} 
 						else if(realage>=MIN_BABY&&realage<MIN_CHILD)	//영유아
 						{price = PARK_REAL_BABY_PRICE;} 
-												
+							
 						printf("몇 개를 주문하시겠습니까?(최대 10개)\n");
-						scanf("%d",&howMany);	
+						scanf("%d",&howMany);
 						printf("우대사항을 선택하세요.\n");
 						printf("1.없음(나이 우대는 자동처리됩니다.)\n");
 						printf("2.장애인\n");
@@ -495,7 +495,7 @@ int main()
 						else if(realage>=MIN_CHILD&&realage<=MAX_CHILD)	//어린이
 						{price = PARK_CHILD_NIGHT_PRICE;} 
 						else if(realage>=MIN_BABY&&realage<MIN_CHILD)	//영유아
-						{price = PARK_REAL_BABY_PRICE;}  				
+						{price = PARK_REAL_BABY_PRICE;}  			
 						printf("몇 개를 주문하시겠습니까?(최대 10개)\n");
 						scanf("%d",&howMany);	
 						printf("우대사항을 선택하세요.\n");
