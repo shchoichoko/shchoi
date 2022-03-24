@@ -156,7 +156,7 @@ void doDiscount()		//우대사항 적용하기
 	}
 	totalPrice = result*ea;
 } 
-void doReceipt()
+void doReceipt()		//영수증 출력 
 {
 	FILE *filePointer = fopen("report.csv","a");
 		
@@ -229,7 +229,7 @@ void doReceipt()
 		count = 0;
 		realTotalPrice=0;
 }	
-void ticketInfo()
+void ticketInfo()		//티켓 정보 저장 
 {
 		ticketTime[count] = dayOrNight;
 		discountArr[count] = discount;
@@ -238,8 +238,6 @@ void ticketInfo()
 		ticketCountArr[count] = ea;
 		realTotalPrice +=totalPrice;
 		count++;
-		printf("계속 발권 하시겠습니까?\n1. 티켓 발권\n2. 종료.");
-		scanf("%d",&reset);
 		dayOrNight=0;discount=0;ageCase=0;price=0;ea=0;totalPrice=0;
 }
 int main()
@@ -253,11 +251,12 @@ int main()
 		selectAge();			// 만나이 계산하기 
 		selectPrice();			// 나이와 선택 시간에 따른 가격 정하기
 		doDiscount();			// 우대사항 적용하기 
-		
 		printf("가격은 : %d원 입니다.\n",totalPrice);	
 		printf("감사합니다.\n"); 
 		//티켓 정보 저장 
 		ticketInfo();
+		printf("티켓팅을 더 하시겠습니까?\n1. 티켓 발권\n2. 종료.");
+		scanf("%d",&reset);
 		}while(reset==1);
 		doReceipt();
 	}while(nextCustomer==1);
